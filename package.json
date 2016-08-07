@@ -1,33 +1,33 @@
 {
-  "name": "markdown-table-formatter",
-  "displayName": "markdown-table-formatter",
-  "description": "",
-  "version": "0.0.1",
-  "publisher": "josa",
-  "engines": {
-    "vscode": "^1.0.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:markdown"
-  ],
-  "main": "./out/src/extension",
-  "contributes": {
-    "commands": []
-  },
-  "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install"
-  },
-  "dependencies": {
-    "reformat-markdown-table": "^1.1.0",
-    "wcwidth": "^1.0.1"
-  },
-  "devDependencies": {
-    "typescript": "^1.8.5",
-    "vscode": "^0.11.0"
-  }
+    "name": "markdown-table-formatter",
+    "displayName": "markdown-table-formatter",
+    "description": "",
+    "version": "0.0.2",
+    "publisher": "josa",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:markdown"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": []
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "dependencies": {
+        "reformat-markdown-table": "^1.1.0",
+        "wcwidth": "^1.0.1"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
 }
