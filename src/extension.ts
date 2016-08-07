@@ -22,11 +22,16 @@ export function activate(context: vscode.ExtensionContext) {
             const range = new vscode.Range(start, end);
 
             let text = document.getText(range)
-            extractTables(text).forEach((table) => {
-                text = text.replace(TABLE_EXP, (substring: string) => reformat(table))
-            })
+            
+            const tables = extractTables(text)
+            if (tables) {
+                tables.forEach((table) => {
+                    text = text.replace(TABLE_EXP, (substring: string) => reformat(table))
+                    result.push(new vscode.TextEdit(range, text));
+                })
+            }
 
-            return [new vscode.TextEdit(range, text)];
+            return result;
         }
     }))
 }
