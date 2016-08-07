@@ -23,6 +23,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "dependencies": {
+    "reformat-markdown-table": "^1.1.0",
     "wcwidth": "^1.0.1"
   },
   "devDependencies": {
