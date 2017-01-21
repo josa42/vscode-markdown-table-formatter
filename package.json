@@ -23,6 +23,7 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "dependencies": {
+        "escape-string-regexp": "^1.0.5",
         "reformat-markdown-table": "^1.1.0",
         "wcwidth": "^1.0.1"
     },

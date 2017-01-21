@@ -5,6 +5,7 @@ import * as vscode from 'vscode';
 import extractTables from './utils/extract-tables'
 
 const { reformat } = require('reformat-markdown-table')
+const escapeStringRegexp = require('escape-string-regexp')
 
 const TABLE_EXP: RegExp = /((?:(?:[^\n]*?\|[^\n]*)\ *)?(?:\r?\n|^))((?:\|\ *(?::?-+:?|::)\ *|\|?(?:\ *(?::?-+:?|::)\ *\|)+)(?:\ *(?::?-+:?|::)\ *)?\ *\r?\n)((?:(?:[^\n]*?\|[^\n]*)\ *(?:\r?\n|$))+)/g;
 
@@ -26,7 +27,8 @@ export function activate(context: vscode.ExtensionContext) {
             const tables = extractTables(text)
             if (tables) {
                 tables.forEach((table) => {
-                    text = text.replace(TABLE_EXP, (substring: string) => reformat(table))
+                    var re = new RegExp(escapeStringRegexp(String(table)), 'g')
+                    text = text.replace(re, (substring: string) => reformat(table))
                     result.push(new vscode.TextEdit(range, text));
                 })
             }
