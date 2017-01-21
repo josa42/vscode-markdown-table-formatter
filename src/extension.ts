@@ -29,8 +29,8 @@ export function activate(context: vscode.ExtensionContext) {
                 tables.forEach((table) => {
                     var re = new RegExp(escapeStringRegexp(String(table)), 'g')
                     text = text.replace(re, (substring: string) => reformat(table))
-                    result.push(new vscode.TextEdit(range, text));
                 })
+                result.push(new vscode.TextEdit(range, text));
             }
 
             return result;
