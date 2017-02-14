@@ -2,7 +2,7 @@
 
 Format mardown tables.
 
-![](https://rawgithub.com/josa42/vscode-markdown-table-formatter/master/docs/asstes/screenshot.gif)
+![](https://rawgithub.com/josa42/vscode-markdown-table-formatter/master/docs/assets/screenshot.gif)
 
 
 ## License
