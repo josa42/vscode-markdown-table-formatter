@@ -2,11 +2,11 @@
     "name": "markdown-table-formatter",
     "displayName": "markdown-table-formatter",
     "description": "",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "josa",
     "repository": {
         "type": "git",
-        "url": "git@github.com:josa42/vscode-markdown-table-formatter.git"
+        "url": "http://github.com/josa42/vscode-markdown-table-formatter.git"
     },
     "engines": {
         "vscode": "^1.0.0"
