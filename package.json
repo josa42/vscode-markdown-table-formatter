@@ -4,16 +4,27 @@
     "description": "",
     "version": "0.1.2",
     "publisher": "josa",
+    "license": "MIT",
+	"homepage": "http://github.com/josa42/vscode-markdown-table-formatter.git",
     "repository": {
         "type": "git",
         "url": "http://github.com/josa42/vscode-markdown-table-formatter.git"
     },
+    "bugs": {
+		"url": "https://github.com/josa42/vscode-markdown-table-formatter/issues"
+	},
     "engines": {
         "vscode": "^1.0.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "Formatters"
     ],
+    "icon": "docs/assets/icon-128x128.png",
+    "galleryBanner": {
+		"color": "#FFFFFF",
+		"theme": "light"
+	},
     "activationEvents": [
         "onLanguage:markdown"
     ],
