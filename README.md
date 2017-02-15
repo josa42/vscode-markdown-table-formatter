@@ -4,6 +4,19 @@ Format mardown tables.
 
 ![](https://rawgithub.com/josa42/vscode-markdown-table-formatter/master/docs/assets/screenshot.gif)
 
+## Usage
+
+Run the command `Format Document` or press `alt+shift+f`.
+
+## Configuration
+
+Enable/disable Markdown Table Formatter.
+
+```
+{
+  "markdownTableFormatter.enable": true
+}
+```
 
 ## License
 

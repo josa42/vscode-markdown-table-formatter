@@ -2,10 +2,19 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { workspace } from 'vscode';
 import extractTables from './utils/extract-tables'
 
 import { reformat } from 'reformat-markdown-table'
 import * as escapeStringRegexp  from 'escape-string-regexp'
+
+let config = workspace.getConfiguration('markdownTableFormatter');
+let enable: boolean = config.get<boolean>('enable', true);
+
+workspace.onDidChangeConfiguration(e => {
+	config = workspace.getConfiguration('markdownTableFormatter');
+    enable = config.get<boolean>('enable', true);
+});
 
 
 // this method is called when your extension is activated
@@ -14,6 +23,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider('markdown', {
         provideDocumentFormattingEdits: function (document, options, token) {
+
+            if (!enable) { return }
+
             const result: vscode.TextEdit[] = [];
 
             const start = new vscode.Position(0, 0);
