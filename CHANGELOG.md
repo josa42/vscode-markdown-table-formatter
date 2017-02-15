@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 0.2.0
+
+- Add configuration option to disable the formatter
+
 ## 0.1.0
 
 - Support multiple table formatting
