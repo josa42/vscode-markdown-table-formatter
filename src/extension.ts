@@ -4,10 +4,8 @@
 import * as vscode from 'vscode';
 import extractTables from './utils/extract-tables'
 
-const { reformat } = require('reformat-markdown-table')
-const escapeStringRegexp = require('escape-string-regexp')
-
-const TABLE_EXP: RegExp = /((?:(?:[^\n]*?\|[^\n]*)\ *)?(?:\r?\n|^))((?:\|\ *(?::?-+:?|::)\ *|\|?(?:\ *(?::?-+:?|::)\ *\|)+)(?:\ *(?::?-+:?|::)\ *)?\ *\r?\n)((?:(?:[^\n]*?\|[^\n]*)\ *(?:\r?\n|$))+)/g;
+import { reformat } from 'reformat-markdown-table'
+import * as escapeStringRegexp  from 'escape-string-regexp'
 
 
 // this method is called when your extension is activated
