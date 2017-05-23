@@ -2,7 +2,7 @@
     "name": "markdown-table-formatter",
     "displayName": "Markdown Table Formatter",
     "description": "",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "publisher": "josa",
     "license": "MIT",
     "homepage": "https://github.com/josa42/vscode-markdown-table-formatter",
