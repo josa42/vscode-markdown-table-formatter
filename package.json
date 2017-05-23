@@ -2,7 +2,7 @@
     "name": "markdown-table-formatter",
     "displayName": "Markdown Table Formatter",
     "description": "",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "publisher": "josa",
     "license": "MIT",
     "homepage": "https://github.com/josa42/vscode-markdown-table-formatter",
@@ -49,11 +49,12 @@
         "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32",
+        "@types/mocha": "^2.2.41",
+        "@types/node": "^7.0.22",
+        "mocha": "^3.4.1",
+        "typescript": "^2.3.3",
+        "vscode": "^1.1.0",
+        "escape-string-regexp": "^1.0.5",
         "reformat-markdown-table": "^1.1.0"
     }
 }
