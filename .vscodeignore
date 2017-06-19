@@ -1,11 +1,12 @@
 .vscode/**
+.vscode-test/**
 typings/**
 out/test/**
 test/**
 src/**
 **/*.map
+.editorconfig
 .gitignore
 tsconfig.json
-vsc-extension-quickstart.md
 *.vsix
 doc
