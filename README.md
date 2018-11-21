@@ -14,7 +14,7 @@ Enable/disable Markdown Table Formatter.
 
 ```
 {
-  "markdownTableFormatter.enable": true
+  "markdown-table-formatter.enable": true
 }
 ```
 
