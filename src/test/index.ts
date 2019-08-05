@@ -5,9 +5,7 @@ import * as glob from 'glob';
 
 export function run(): Promise<void> {
 	// Create the mocha test
-	const mocha = new Mocha({
-		ui: 'tdd',
-	});
+	const mocha = new Mocha();
 	mocha.useColors(true);
 	
 	const testsRoot = path.resolve(__dirname, '..');
@@ -17,8 +15,6 @@ export function run(): Promise<void> {
 			if (err) {
 				return e(err);
       }
-
-      console.log(files)
 
 			// Add files to the test suite
 			files.forEach(f => mocha.addFile(path.resolve(testsRoot, f)));

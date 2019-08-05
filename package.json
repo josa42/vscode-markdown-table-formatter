@@ -62,7 +62,6 @@
         "vscode-test": "^1.1.0"
     },
     "dependencies": {
-        "escape-string-regexp": "^2.0.0",
-        "reformat-markdown-table": "^1.1.0"
+        "escape-string-regexp": "^2.0.0"
     }
 }
