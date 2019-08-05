@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 import {workspace} from 'vscode';
 import extractTables from './utils/extract-tables'
 
-import {format} from './utils/format-table'
+import formatTable from './utils/format-table'
 import * as escapeStringRegexp from 'escape-string-regexp'
 
 let config = workspace.getConfiguration('markdownTableFormatter');
@@ -37,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (tables) {
         tables.forEach((table) => {
           var re = new RegExp(escapeStringRegexp(String(table)), 'g')
-          text = text.replace(re, (substring: string) => format(table))
+          text = text.replace(re, (substring: string) => formatTable(table))
         })
         result.push(new vscode.TextEdit(range, text));
       }

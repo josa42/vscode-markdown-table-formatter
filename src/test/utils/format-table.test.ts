@@ -1,6 +1,6 @@
 
 import * as assert from 'assert';
-import {format} from '../../utils/format-table';
+import formatTable from '../../utils/format-table';
 
 
 describe('format-table', () => {
@@ -9,7 +9,7 @@ describe('format-table', () => {
     const input = [
       '| Header 1 |   Header 2   | Header 3|H|',
       '| --- | --- | :---: | :---: |',
-      '| aaa |bbb| cccc | ddd |',
+      '| aaa |bbb| cccc | ddddd |',
       '   |   eee |fff',
       '|  |   |   eee |fff',
       '| | | |'
@@ -18,14 +18,14 @@ describe('format-table', () => {
     const output = [
       '| Header 1 | Header 2 | Header 3 |   H   |',
       '|----------|----------|:--------:|:-----:|',
-      '| aaa      | bbb      |   cccc   |  ddd  |',
+      '| aaa      | bbb      |   cccc   | ddddd |',
       '| eee      | fff      |          |       |',
       '|          |          |    eee   |  fff  |',
       '|          |          |          |       |',
       ''
     ].join('\n');
 
-    assert.deepEqual(format(input), output)
+    assert.deepEqual(formatTable(input), output)
   });
 
 });
