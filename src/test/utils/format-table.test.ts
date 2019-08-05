@@ -68,4 +68,23 @@ describe('format-table', () => {
     assert.deepEqual(formatTable(input), output)
   });
 
+  it('should format tables correct with empty first column (issue: #7)', () => {
+    const input = [
+      '| Parameter | Type                                   | Default     | Required | Description                                                    |',
+      '|-----------|----------------------------------------|-------------|----------|----------------------------------------------------------------|',
+      '| title     | `string | null | void`                 |             | Yes      | Array of strings that are offered as autocomplete suggestions. |',
+      '| content   | `string | null | void`                 |             | Yes      | A callback that gets                                           |'
+    ].join('\n')
+
+    const output = [
+      '| Parameter | Type                   | Default | Required | Description                                                    |',
+      '|-----------|------------------------|---------|----------|----------------------------------------------------------------|',
+      '| title     | `string | null | void` |         | Yes      | Array of strings that are offered as autocomplete suggestions. |',
+      '| content   | `string | null | void` |         | Yes      | A callback that gets                                           |',
+      ''
+    ].join('\n')
+
+    assert.deepEqual(formatTable(input), output)
+  });
 });
+

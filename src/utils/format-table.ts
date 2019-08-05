@@ -29,13 +29,40 @@ export default function formatTable(str: string): string {
 }
 
 function splitStringToTable(str: string): string[][] {
-  return str.trim().split('\n').map((row) => {
-    return row
-      .replace(/^[\s]+/, '')
-      .replace(/^\|/, '')
-      .replace(/[\|\s]+$/, '')
-      .split('|').map((s) => s.trim());
-  });
+  return str.trim().split('\n')
+    // trim space and "|", but respect empty first column
+    // E.g. "| | Test a | Test b |"
+    //   => "| Test a | Test b"
+    .map((row) => row.replace(/^(\s*\|\s*|\s+)/, '').replace(/[\|\s]+$/, ''))
+    // Split rows into columns
+    .map((row) => {
+
+      let inCode = false
+
+      return row.split('')
+        // Split by "|", but only if not inside inline-code
+        // E.g. "| Command | `ls | grep foo` |"
+        //  =>  [ "Command","`ls | grep foo`" ]
+        .reduce((columns, c): string[] => {
+          if (c === '`') {
+            // Switch mode
+            inCode = !inCode
+          }
+
+          if (c === '|' && !inCode) {
+            // Add new Column
+            columns.push('')
+
+          } else {
+            // Append char to current column
+            columns[columns.length - 1] += c
+          }
+
+          return columns
+        }, [''])
+        // Trim space in columns
+        .map(column => column.trim())
+    })
 }
 
 function getMaxLengthPerColumn(table: string[][]): number[] {
