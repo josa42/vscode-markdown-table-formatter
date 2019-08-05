@@ -41,9 +41,29 @@ describe('format-table', () => {
     const output = [
       '| Header '.repeat(colums) + '|',
       '|:------:'.repeat(colums) + '|',
-      ...Array(10000).fill('|   Foo  '.repeat(colums) + '|'),
+      ...Array(rows).fill('|   Foo  '.repeat(colums) + '|'),
       ''
     ].join('\n')
+
+    assert.deepEqual(formatTable(input), output)
+  });
+
+  it('should format tables correct with empty first column (issue: #6)', () => {
+    const input = [
+      '| Supported in following Version   | Minimum Version Supported |',
+      '|------------------------------------------|---------------------------|',
+      '|                                          | Win32/64 (inc. Windows 7, Windows 8 Pro)   |',
+      '|                                          | Android 4.1                          |'
+    ].join('\n')
+
+    const output = [
+      '| Supported in following Version | Minimum Version Supported                |',
+      '|--------------------------------|------------------------------------------|',
+      '|                                | Win32/64 (inc. Windows 7, Windows 8 Pro) |',
+      '|                                | Android 4.1                              |',
+      ''
+    ].join('\n')
+
 
     assert.deepEqual(formatTable(input), output)
   });
