@@ -21,8 +21,7 @@ describe('format-table', () => {
       '| aaa      | bbb      |   cccc   | ddddd |',
       '| eee      | fff      |          |       |',
       '|          |          |    eee   |  fff  |',
-      '|          |          |          |       |',
-      ''
+      '|          |          |          |       |'
     ].join('\n');
 
     assert.deepEqual(formatTable(input), output)
@@ -41,8 +40,7 @@ describe('format-table', () => {
     const output = [
       '| Header '.repeat(colums) + '|',
       '|:------:'.repeat(colums) + '|',
-      ...Array(rows).fill('|   Foo  '.repeat(colums) + '|'),
-      ''
+      ...Array(rows).fill('|   Foo  '.repeat(colums) + '|')
     ].join('\n')
 
     assert.deepEqual(formatTable(input), output)
@@ -60,8 +58,7 @@ describe('format-table', () => {
       '| Supported in following Version | Minimum Version Supported                |',
       '|--------------------------------|------------------------------------------|',
       '|                                | Win32/64 (inc. Windows 7, Windows 8 Pro) |',
-      '|                                | Android 4.1                              |',
-      ''
+      '|                                | Android 4.1                              |'
     ].join('\n')
 
 
@@ -80,8 +77,7 @@ describe('format-table', () => {
       '| Parameter | Type                   | Default | Required | Description                                                    |',
       '|-----------|------------------------|---------|----------|----------------------------------------------------------------|',
       '| title     | `string | null | void` |         | Yes      | Array of strings that are offered as autocomplete suggestions. |',
-      '| content   | `string | null | void` |         | Yes      | A callback that gets                                           |',
-      ''
+      '| content   | `string | null | void` |         | Yes      | A callback that gets                                           |'
     ].join('\n')
 
     assert.deepEqual(formatTable(input), output)

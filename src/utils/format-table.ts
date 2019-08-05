@@ -25,7 +25,7 @@ export default function formatTable(str: string): string {
 
       return ' ' + padStringWithAlignment(cell, column_length, alignments[column_index]) + ' ';
     }).join('|') + '|';
-  }).join('\n') + '\n';
+  }).join('\n');
 }
 
 function splitStringToTable(str: string): string[][] {

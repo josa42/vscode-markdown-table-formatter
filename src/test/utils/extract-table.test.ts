@@ -20,12 +20,12 @@ describe('extractTables()', () => {
 
   it('should extract multiple large markdown tables', () => {
     const rows = 10_000
-    const colums = 200
+    const columns = 200
 
     const table = [
-      '| Header '.repeat(colums) + '|',
-      '|:-:'.repeat(colums) + '|',
-      ...Array(rows).fill('| Foo '.repeat(colums) + '|')
+      '| Header '.repeat(columns) + '|',
+      '|:-:'.repeat(columns) + '|',
+      ...Array(rows).fill('| Foo '.repeat(columns) + '|'),
     ].join('\n')
 
     const input = [
