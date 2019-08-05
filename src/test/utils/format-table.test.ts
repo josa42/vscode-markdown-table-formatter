@@ -5,7 +5,7 @@ import formatTable from '../../utils/format-table';
 
 describe('format-table', () => {
 
-  it('should reformat a markdown table', () => {
+  it('should format a markdown table', () => {
     const input = [
       '| Header 1 |   Header 2   | Header 3|H|',
       '| --- | --- | :---: | :---: |',
@@ -24,6 +24,26 @@ describe('format-table', () => {
       '|          |          |          |       |',
       ''
     ].join('\n');
+
+    assert.deepEqual(formatTable(input), output)
+  });
+
+  it('should format a large markdown table', () => {
+    const rows = 10_000
+    const colums = 200
+
+    const input = [
+      '| Header '.repeat(colums) + '|',
+      '|:-:'.repeat(colums) + '|',
+      ...Array(rows).fill('| Foo '.repeat(colums) + '|')
+    ].join('\n')
+
+    const output = [
+      '| Header '.repeat(colums) + '|',
+      '|:------:'.repeat(colums) + '|',
+      ...Array(10000).fill('|   Foo  '.repeat(colums) + '|'),
+      ''
+    ].join('\n')
 
     assert.deepEqual(formatTable(input), output)
   });
